@@ -1,0 +1,14 @@
+### Получение токена
+POST http://127.0.0.1:8000/api/token/
+Content-Type: application/json
+
+{
+  "username": "evgeniy",
+  "password": "qwe"
+}
+
+
+
+### Получение списка проектов
+GET http://127.0.0.1:8000/api/projects/
+Authorization: Token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM0NDE2NjczLCJpYXQiOjE3MzQ0MTYzNzMsImp0aSI6ImE3YjhlZGM2NmMwODQ0ZTY5MWViMGZkNjRhNjM0MjAwIiwidXNlcl9pZCI6MX0._KvhrcKE5B-K_q2gMo2QkEPvUXmq9vIqJ68ZOy-VEzA

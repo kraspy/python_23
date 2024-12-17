@@ -1,0 +1,24 @@
+<header>
+  <nav>
+    <ul>
+      {% if user.is_authenticated %}
+        <li><a href="{% url 'project_list' %}">Список проектов</a></li>
+
+        {% if user.role == "ADMIN" %}
+          <li><a href="{% url 'project_create' %}">Создать проект</a></li>
+          <li><a href="{% url 'admin:index' %}">Админ-панель</a></li>
+        {% endif %}
+
+        {% if user.role == "MANAGER" %}
+          <li><a href="{% url 'project_list' %}">Управление задачами</a></li>
+        {% endif %}
+
+        <li>Пользователь: <strong>{{ user.username }}</strong> ({{ user.get_role_display }})</li>
+        <li><a href="{% url 'logout' %}">Выйти</a></li>
+      {% else %}
+        <li><a href="{% url 'login' %}">Вход</a></li>
+        <li><a href="{% url 'register' %}">Регистрация</a></li>
+      {% endif %}
+    </ul>
+  </nav>
+</header>
